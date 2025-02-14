@@ -1,6 +1,7 @@
 Career Connect is a full-featured job portal built using the MERN stack, designed to streamline the job application process for users and provide recruiters with powerful job management tools.
 
 ✨ Features
+
 ✅ Secure Authentication & Role Management – Users & Admins have separate access with JWT token verification, Email verification, and Password reset via Mailtrap & Nodemailer.
 
 ✅ Protected Routes – Ensures that only authenticated users can access specific pages, enhancing security. 🔒
