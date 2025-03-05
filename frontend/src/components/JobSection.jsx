@@ -46,7 +46,7 @@ const JobSection = () => {
   };
 
   return (
-    <div className='fixed w-full top-0 left-0'>
+    <div className='xs:fixed scrollable w-full top-0 left-0 mb-10'>
       <Navbar />
       <div className='max-w-7xl mx-auto mt-5'>
         <div className='flex flex-col xs:flex-row xs:gap-5'>
@@ -63,7 +63,7 @@ const JobSection = () => {
               </span>
             ) : (
               <div className='flex-1 h-[88vh] overflow-y-auto pb-5'>
-                <div className='grid grid-cols-1 xs:grid-cols-3 px-4 xs:gap-4'>
+                <div className='grid grid-cols-1 xs:grid-cols-2 ls:grid-cols-3 px-4 xs:gap-4'>
                   {filterJobs.map((job) => (
                     <motion.div
                       key={job._id}

@@ -9,7 +9,7 @@ const About = () => {
             <Navbar />
 
             <div className='px-8 xs:px-0'>
-                <div className='flex flex-col xs:flex-row mt-6 pb-28 gap-4 xs:gap-0'>
+                <div className='flex flex-col xs:flex-row mt-6 xs:pb-28 gap-4 xs:gap-0'>
                     <div className='flex flex-col xs:items-center xs:mx-12 xs:w-1/2 w-full'>
                         <h1 className='text-4xl font-bold mt-2'>Welcome to Career<span className='text-4xl font-bold mt-2 text-[#720947]'>Connect</span></h1>
                         <p className='text-muted-foreground mt-6 text-justify'>
@@ -18,11 +18,11 @@ const About = () => {
                             We pride ourselves on providing valuable resources, including resume-building tools, interview tips, and career advice, to empower you in your job search. Our dedicated team is committed to ensuring that you have access to the latest job openings and insights into the job market.
                         </p>
                     </div>
-                    <div className='flex justify-center xs:mx-12 xs:w-1/2 gap-2'>
+                    <div className='flex justify-center xs:mx-12 xs:w-1/2'>
                         <img src="https://oasisinfobyte.com/image/ab.svg" width="400x700" alt="" />
                     </div>
                 </div>
-                <div className='flex flex-col xs:flex-row mt-6 pb-28 gap-4 xs:gap-0'>
+                <div className='flex flex-col-reverse xs:flex-row mt-6 xs:pb-28 gap-4 xs:gap-0'>
                     <div className='flex justify-center xs:mx-12 xs:w-1/2 gap-2'>
                         <img src="https://oasisinfobyte.com/image/wbd.svg" width="400x700" alt="" />
                     </div>
@@ -36,7 +36,7 @@ const About = () => {
                             At Career Connect, we prioritize innovation and inclusivity, ensuring that our services cater to a diverse range of industries and job roles. Our team is committed to continuously improving our platform, incorporating user feedback, and leveraging the latest technology to enhance the job search experience.</p>
                     </div>
                 </div>
-                <div className='flex flex-col xs:flex-row mt-6 pb-28 gap-4 xs:gap-0'>
+                <div className='flex flex-col xs:flex-row mt-6 xs:pb-28 gap-4 xs:gap-0'>
                     <div className='flex flex-col xs:items-center xs:mx-12 xs:w-1/2 w-full'>
                         <h1 className='text-4xl font-bold mt-2'>Vision of Career<span className='text-4xl font-bold mt-2 text-[#F83002]'>Connect</span></h1>
                         <p className='text-muted-foreground mt-6 text-justify'>
@@ -50,7 +50,7 @@ const About = () => {
                         <img src="https://oasisinfobyte.com/image/Cyborg-bro%20(1).svg" width="400x700" alt="" />
                     </div>
                 </div>
-                <div className='flex flex-col xs:flex-row mt-6 pb-28 gap-4 xs:gap-0'>
+                <div className='flex flex-col-reverse xs:flex-row mt-6 xs:pb-28 gap-4 xs:gap-0'>
                     <div className='flex justify-center xs:mx-12 xs:w-1/2 gap-2 '>
 
                         <img src="https://oasisinfobyte.com/image/Server-rafiki%20(1).svg" width="500x800" alt="" />
@@ -70,7 +70,7 @@ const About = () => {
 
             {/* FAQs */}
             <div className='flex flex-col xs:flex-row mt-6 pb-28 gap-4 xs:gap-0'>
-                <div className='flex flex-col mx-12 w-1/2 gap-10'>
+                <div className='flex flex-col mx-12 xs:w-1/2 gap-10'>
                     <h1 className='text-4xl font-bold mt-2'>Quick <span className='text-4xl font-bold mt-2 text-[#F83002]'>FAQ's</span></h1>
                     <Accordion type="single" collapsible >
                         <AccordionItem value="item-1">
@@ -111,7 +111,7 @@ const About = () => {
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className='flex justify-center xs:mx-12 xs:w-1/2 gap-2 '>
+                <div className='px-8 xs:px-0 mt-6 xs:mt-0 flex justify-center xs:mx-12 xs:w-1/2 gap-2 '>
 
                     <img src="https://oasisinfobyte.com/image/FAQs-amico%20(1)%20(1).svg" width="400x700" alt="" />
                 </div>
