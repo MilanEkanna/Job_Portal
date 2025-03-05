@@ -13,21 +13,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLoading, setUser } from '@/redux/authSlice'
 import store from '@/redux/store'
 
-
-
-
-
-
 const Login = () => {
-  
   const [input, setInput] = useState({
-    
     email: "",
-    
     password: "",
     role: ""
   });
-  
+
   const dispatch = useDispatch()
   const { loading } = useSelector(store => store.auth)
 
@@ -55,36 +47,26 @@ const Login = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message)
-
     } finally {
       dispatch(setLoading(false))
     }
-
   }
   return (
     <div >
       <Navbar />
-      <div className='flex items-center justify-center max-w-7xl mx-auto'>
-        <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-md p-4 my-6 shadow-xl'>
-
+      <div className='flex items-center justify-center xs:max-w-7xl w-[80%] mx-auto'>
+        <form onSubmit={submitHandler} className='xs:w-1/2 border border-gray-200 rounded-md p-4 my-6 shadow-xl'>
           <div className='flex'>
-
             <LogIn className='my-1 ' /> <h1 className='font-bold text-xl mb-5 mx-2 '>Already have an account? Login here </h1>
           </div>
-
-
           <div className='my-2'>
             <Label>Enter Your E-mail</Label>
             <Input type="email" value={input.email} name="email" onChange={changeEventHandler} placeholder="Enter Your Email" required="true" />
-
           </div>
-
           <div className='my-3'>
             <Label>Enter Your Password</Label>
             <Input type="password" value={input.password} name="password" onChange={changeEventHandler} placeholder="Enter Your Password" required="true" />
-
           </div>
-
           <div className='flex items-center gap-28'>
             <RadioGroup className="flex items-center gap-4 m-5 mx-px">
               <div className="flex items-center space-x-2 ">
@@ -92,39 +74,33 @@ const Login = () => {
                   type="radio"
                   name="role"
                   value="student"
+                  id="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
                   className="cursor-pointer items-center"
                 />
-                <Label htmlFor="option-one">Student</Label>
+                <Label htmlFor="student" className="cursor-pointer" >Student</Label>
               </div>
-
-
-
               <div className="flex items-center space-x-2">
                 <Input
                   type="radio"
                   name="role"
                   value="recruiter"
+                  id="recruiter"
                   checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
-
                   className="cursor-pointer"
                 />
-                <Label htmlFor="option-two">Recruiter</Label>
+                <Label htmlFor="recruiter" className="cursor-pointer">Recruiter</Label>
               </div>
             </RadioGroup>
-
-
           </div>
           {
             loading ? <Button className="w-full my-2"><Loader2 className='mr-2 h-4 w-4 animate-spin' />Please wait</Button> : <Button type="submit" className="w-full my-2 bg-pink-900" >Login</Button>
           }
-
           <span className='text-sm'>Don't have an account? <Link to="/signup" className='text-blue-700'>signup</Link></span>
         </form>
       </div>
-
     </div>
   )
 }
