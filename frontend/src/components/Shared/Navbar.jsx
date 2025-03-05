@@ -3,11 +3,12 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { LogIn, LogOut, NotebookPen, User2 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logout_alert from "./Logout_alert";
 import { useSelector } from "react-redux";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +22,7 @@ const Navbar = () => {
     }, []);
 
     const navigate = useNavigate();
+    const location = useLocation();
     const toHome = () => {
         navigate('/')
     }
@@ -37,7 +39,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Icon */}
                 <div
-                    className="xs:hidden text-2xl text-black cursor-pointer"
+                    className="xs:hidden text-2xl text-[#720947] cursor-pointer "
                     onClick={() => setIsMenuOpen(true)}
                 >
                     <RiMenu3Fill />
@@ -45,18 +47,32 @@ const Navbar = () => {
 
                 {isMenuOpen && (
                     <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-                        <div className="h-1/2 w-56 bg-white absolute right-0 top-0 p-4">
-                            <span
-                                className="absolute right-4 top-4 text-2xl cursor-pointer"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <IoClose />
-                            </span>
-                            <ul className="mt-10 space-y-6">
+                        <div className="h-fit py-4 w-[70%] bg-violet-50 absolute px-4 right-0 top-0 xs:p-4 ">
+                            <div className="flex items-center justify-between">
+                                <div className="">
+                                    <Link to="/login">
+                                        <Button variant="outline" className="hover:transition-all duration-500 ease-in-out px-3 mr-2 border-[#720947]  ">
+                                            <LogIn /> Login
+                                        </Button>
+                                    </Link>
+                                    <Link to="/signup">
+                                        <Button className="bg-[#720947] transition-all duration-500 px-3 ease-in-out">
+                                            <NotebookPen /> Signup
+                                        </Button>
+                                    </Link>
+                                </div>
+                                <span
+                                    className="right-3 top-2 text-xl bg-[#720947] text-white cursor-pointer border rounded-full px-1 py-1"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <IoClose />
+                                </span>
+                            </div>
+                            <ul className="mt-12 xs:mt-10 space-y-6 w-full">
                                 {user && user.role === "recruiter" ? (
                                     <>
                                         <Link to="/admin/companies" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg">Companies</li>
+                                            <li className="text-black text-xl">Companies</li>
                                         </Link>
                                         <Link to="/admin/jobs" onClick={() => setIsMenuOpen(false)}>
                                             <li className="text-black text-lg">Jobs</li>
@@ -65,19 +81,19 @@ const Navbar = () => {
                                 ) : (
                                     <>
                                         <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg ">Home</li>
+                                            <li className={`${location.pathname === '/' ? "bg-[#720947] text-white py-1" : ""} text-base font-semibold mt-2 w-full text-[#720947] pl-4 rounded-lg`}>Home</li>
                                         </Link>
                                         <Link to="/about" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg ">About</li>
+                                            <li className={`${location.pathname === '/about' ? "bg-[#720947] text-white py-1" : ""} text-base font-semibold mt-2 w-full text-[#720947] pl-4 rounded-lg`}>About</li>
                                         </Link>
                                         <Link to="/jobs" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg ">Jobs</li>
+                                            <li className={`${location.pathname === '/jobs' ? "bg-[#720947] text-white py-1" : ""} text-base font-semibold mt-2 w-full text-[#720947] pl-4 rounded-lg`}>Jobs</li>
                                         </Link>
                                         <Link to="/browse" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg ">Browse</li>
+                                            <li className={`${location.pathname === '/browse' ? "bg-[#720947] text-white py-1" : ""} text-base font-semibold mt-2 w-full text-[#720947] pl-4 rounded-lg`}>Browse</li>
                                         </Link>
                                         <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                                            <li className="text-black text-lg ">Contact Us</li>
+                                            <li className={`${location.pathname === '/contact' ? "bg-[#720947] text-white py-1" : ""} text-base font-semibold mt-2 w-full text-[#720947] pl-4 rounded-lg `}>Contact Us</li>
                                         </Link>
                                     </>
                                 )}
