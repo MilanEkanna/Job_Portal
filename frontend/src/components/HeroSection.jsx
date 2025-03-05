@@ -15,27 +15,21 @@ const HeroSection = () => {
   const searchJobHandler = ()=>{
     dispatch(setSearchedQuery(query));
     navigate("/browse")
-
-    
   }
   return (
-    <div className='text-center  '>
-
-      <div className='flex flex-col gap-5 pt-4 '>
-
-        <span className=' mx-auto px-4 py-2 rounded-full bg-[#720947] hover:bg-[#541238] text-white font-medium'>No. 1 Job Hunt Platform</span>
+    <div className='text-center'>
+      <div className='flex flex-col gap-5 pt-10 xs:pt-4  px-4'>
+        <span className=' mx-auto px-6 xs:px-4 py-2 rounded-full bg-[#720947] hover:bg-[#541238] text-white font-medium'>No. 1 Job Hunt Platform</span>
         <h1 className='text-5xl font-bold '>Search, Apply & <br /> Get Your <span className='text-[#720947]'>Dream Jobs</span></h1>
-        <p>Welcome to CareerConnect, it's a no. 1 platform  known for it's best and one click job search experience.</p>
+        <p className='text-base xs:text-sm font-semibold xs:font-medium'>Welcome to CareerConnect, it's a no. 1 platform  known for it's best and one click job search experience.</p>
        
-        <div className='flex w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto mt-3'>
-
+        <div className='flex xs:w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto mt-3'>
           <input 
             type="text"
             onChange={(e)=> setQuery(e.target.value)}
             placeholder='Find your dream jobs'
             className='outline-none border-none w-full'
           />
-
           <Button onClick={searchJobHandler} className="outline-none border-none border rounded-r-full bg-[#720947]"><Search /> Search</Button>
         </div>
       </div>

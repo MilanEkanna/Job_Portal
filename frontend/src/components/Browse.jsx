@@ -22,19 +22,17 @@ const Browse = () => {
     <div >
       <Navbar />
       <div className='max-w-7xl mx-auto  p-4'>
-
         <h1 className='font-bold text-xl'>Search Results ({allJobs.length})</h1>
         {
           allJobs.length <= 0 ? <h1 className='text-4xl text-gray-500 mt-32 text-center'>Oops!! No Jobs Found</h1> 
-          : <div className='grid grid-cols-3 gap-4 mt-2 mb-4 '>
-
-          {
-            allJobs.map((job) => {
-              return (
-                <Job key={job?._id} job={job} />
-              )
-            })
-          }
+          : <div className='grid grid-cols-1 xs:grid-cols-3 gap-4 mt-2 mb-4 '>
+            {
+              allJobs.map((job) => {
+                return (
+                  <Job key={job?._id} job={job} />
+                )
+              })
+            }
         </div>
         }
       </div>
